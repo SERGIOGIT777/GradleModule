@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'application'
+}
+
+
+//mainClassName = 'hello.HelloWorld'
+mainClassName = 'WebApplication'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'joda-time:joda-time:2.10.13'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation project(':server')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    archiveBaseName = 'gs-gradle'
+    archiveVersion =  '0.1.0'
+    manifest {
+//        attributes 'Main-Class' : 'hello.HelloWorld'
+        attributes 'Main-Class' : 'WebApplication'
+    }
+    from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+}
+
+wrapper{
+    gradleVersion = '1.11'
+}

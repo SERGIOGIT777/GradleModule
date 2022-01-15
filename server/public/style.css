@@ -1,0 +1,20 @@
+person {
+    font-family: Georgia;
+    font-size: 13px;
+    color: green;
+    border: black 5px solid;
+    background: antiquewhite;
+    width: 100%;
+    border-collapse: collapse;
+}
+row {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    padding: 8px;
+    border: 2px solid black;
+}
+pow {
+    padding: 5px;
+    border: 2px solid black;
+}
