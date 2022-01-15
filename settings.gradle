@@ -1,3 +1,4 @@
 rootProject.name = 'Gradle'
 include 'server'
+include 'lib'
 
